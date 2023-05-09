@@ -24,7 +24,7 @@ export default class Chat {
     this.form = container.querySelector('.chatForm');
     this.input = container.querySelector('input');
     // this.ws = new WebSocket('ws://localhost:9020/ws');
-    this.ws = new WebSocket('ws://ws-backend-jgax.onrender.com/ws');
+    this.ws = new WebSocket('wss://ws-backend-jgax.onrender.com/ws');
   }
 
   async init() {
