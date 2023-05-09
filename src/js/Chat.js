@@ -23,7 +23,8 @@ export default class Chat {
     this.listUsers = container.querySelector('.listUsers');
     this.form = container.querySelector('.chatForm');
     this.input = container.querySelector('input');
-    this.ws = new WebSocket('ws://localhost:9020/ws');
+    // this.ws = new WebSocket('ws://localhost:9020/ws');
+    this.ws = new WebSocket('ws://ws-backend-jgax.onrender.com/ws');
   }
 
   async init() {
@@ -95,7 +96,8 @@ export default class Chat {
       date: getTime(),
     };
 
-    const api = new API('http://localhost:9020/message');
+    // const api = new API('http://localhost:9020/message');
+    const api = new API('https://ws-backend-jgax.onrender.com/message');
     const response = await api.send(message);
     if (response.status === 200 && response.ok) {
       this.input.value = '';
